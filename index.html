@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>贵州大学学生之家</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      font-family: "微软雅黑 Light";
+    }
+    body{
+      background-color: #eee;
+    }
+    main{
+      display: flex;
+      flex-direction: column;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    header{
+      background: url(http://ife.baidu.com/2017/asset/common/img/banner_c162049.jpg) center center no-repeat;
+      width: 100%;
+      height: 458px;
+      background-position: bottom;
+      text-align: center;
+      color: #fff;
+    }
+    header p{
+      padding-top: 150px;
+      font-size: 36px;
+    }
+    .btn{
+      text-decoration: none;
+      color: #fff;
+      padding: 10px 20px;
+      background-color: #02af5f;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 20px;
+      transition: 0.5s all;
+    }
+    .btn:hover{
+      background-color: #ffa500;
+    }
+    main>h2{
+      line-height: 2;
+      border-bottom: 2px solid;
+      border-left: 20px solid;
+      text-indent: 2em;
+      margin: 10px 0;
+    }
+    footer{
+      margin-top: 50px;
+      text-align: center;
+    }
+    #articleList,#consultList{
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    #articleList li,#consultList li{
+      width: 200px;
+      height: 150px;
+      background-color: #eee;
+      margin: 10px;
+      flex-grow: 1;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      cursor: pointer;
+      transition: all 0.5s;
+    }
+    #articleList li a,#consultList li a{
+      text-decoration: none;
+      font-size: 24px;
+      color: #fff;
+      font-weight: 700;
+      transition: all 0.5s;
+    }
+    .active,#articleList li:hover,#consultList li:hover{
+      background-color: #fff !important;
+      box-shadow: #aaa 0 0 10px;
+    }
+    .activea,#articleList li:hover a,#consultList li:hover a{
+      color: #000 !important;
+    }
+    article{
+      line-height: 2;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: #fff;
+      box-shadow: #aaa 0 0 10px;
+      display: none;
+    }
+    article a{
+      word-break: break-all;
+      word-wrap: break-word
+    }
+    article li{
+      margin-left: 20px;
+    }
+    article img{
+      border: 1px solid;
+      max-width: 100%;
+    }
+    article pre{
+      background-color: #111;
+      color: #fff;
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+<body>
+  <main>
+  <header><p>贵州大学学生之家<br>学习培训中心</p> <a class="btn"href="mqqwpa://im/chat?chat_type=wpa&uin=3314432378&version=1&src_type=web&web_src=oicqzone.com" style="margin-top:10px;">点击给我发消息</a>
+
+  
+  </header>
+  <h2>手册列表</h2>
+  <ul id="articleList">
+    <li><a href="javascript:;" shouce-href="start">前言</a></li>
+    <li><a href="shouce/第三章：工具推荐.html">工具推荐</a></li>
+    <li><a href="shouce/第四章：贵州大学办事文档库.html">下载中心</a></li>
+    <li><a href="shouce/第五章：贵州大学VPN使用及校园网.html">校园网络</a></li>
+    <li><a href="shouce/第六章：电脑实用软件安装及下载.html">实用软件</a></li>
+    <li><a href="shouce/第七章：办公软件学习资源分享.html">办公教程</a></li>
+    <li><a href="http://www.offcn.com/shenlunpd/zhxing/gwxz/">公文写作</a></li>
+    <li><a href="http://school.mepuw.cn/">微觅贵大（小程序）</a></li>
+    <li><a href="https://mp.weixin.qq.com/s/WqCHFeqeV_pp3zgOOSlKUw
+">贵大办事指南</a></li>
+    <li><a href="peixun.php">学生证打印</a></li>
+  </ul>
+  <article></article>
+  <h2>参考资料</h2>
+  <ul id="consultList">
+    <li><a href="http://www.daqianduan.com/nav">网址导航</a></li>
+    <li><a href="https://developer.mozilla.org/zh-CN/">贵大网址</a></li>
+    <li><a href="http://hao.wordlm.com/">工作学习</a></li>
+    <li><a href="http://www.imooc.com/">慕课网</a></li>
+    <li><a href="https://www.freecodecamp.cn/">freecodecamp</a></li>
+    <li><a href="https://ant.design/docs/spec/introduce-cn">AntD设计规范</a></li>
+    <li><a href="http://xiaos.life">知悠博客</a></li>
+  </ul>
+  <footer>似最初 2018&copy;</footer>
+  </main>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/showdown/1.7.6/showdown.min.js"></script>
+  <script>
+  !function(){
+    var _LOCK = false;
+    var getRandomColor = function(){
+      return  '#' +
+      (function(color){
+      return (color +=  '0123456789'[Math.floor(Math.random()*10)])
+        && (color.length == 6) ?  color : arguments.callee(color);
+        })('');
+      };
+    $('#articleList li').each(function(index, item){
+      $(item).css('background-color', getRandomColor());
+    });
+    $('#consultList li').each(function(index, item){
+      $(item).css('background-color', getRandomColor());
+    });
+    $('#consultList').on('click','li',function(){
+      window.location.href = $(this).find('a').attr('href');
+    });
+    $('#articleList').on('click','li',function(){
+      if(_LOCK){
+        return false;
+      }
+      _LOCK = true;
+      self = this;
+      console.log(self);
+      $.get('shouce/' + $(self).find('a').attr('shouce-href') + '.md',{},function(shouce){
+        $('article').show();
+
+        $('#articleList li').removeClass('active');
+        $('#articleList li a').removeClass('activea');
+
+        $(self).addClass('active');
+        $(self).find('a').addClass('activea');
+
+        var converter = new showdown.Converter();
+        html_content = converter.makeHtml(shouce);
+        $('article').html( html_content );
+        $('html,body').animate({
+            scrollTop: $('article').offset().top - 60
+        }, 1000);
+      });
+      _LOCK = false;
+    })
+  }()
+  </script>
+  
+  <link href="kefu/css/lanren.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+
+<!-- 客服代码部分begin -->
+<div id="rightArrow"><a href="javascript:;" title="在线客户"></a></div>
+<div id="floatDivBoxs">
+  <div class="floatDtt">在线客服</div>
+  <div class="floatShadow">
+    <ul class="floatDqq">
+      <li><a target="_blank" href="tencent://message/?uin=3314432378&Site=sc.chinaz.com&Menu=yes"><img src="kefu/images/qq.png" align="absmiddle">学生之家</a></li>
+      
+    </ul>
+    <div class="floatDtxt">热线电话</div>
+    <div class="floatDtel"><img src="/kefu/images/online_phone.jpg" width="155" height="45" alt=""></div>
+    <div class="floatImg"><img src="kefu/images/myqq.jpg" width="100%">QQ公众账号</div>
+  </div>
+  <div class="floatDbg"></div>
+</div>
+<script src="kefu/js/jquery-1.9.1.min.js"></script>
+<script>
+$(function(){
+	var flag=0;
+	$('#rightArrow').on("click",function(){
+		if(flag==1){
+			$("#floatDivBoxs").animate({right: '-175px'},300);
+			$(this).animate({right: '-5px'},300);
+			$(this).css('background-position','-50px 0');
+			flag=0;
+		}else{
+			$("#floatDivBoxs").animate({right: '0'},300);
+			$(this).animate({right: '170px'},300);
+			$(this).css('background-position','0px 0');
+			flag=1;
+		}
+	});
+});
+</script>
+<!-- 代码部分end -->
+</body>
+</html>
